@@ -25,7 +25,7 @@ const char* Status::CopyState(const char* state) {
   ret = strncpy_s(result, cch, state, cch - 1);
   assert(ret == 0);
 #else
-  std::strncpy(result, state, cch - 1);
+  std::memcpy(result, state, cch - 1);
 #endif
   return result;
 }
